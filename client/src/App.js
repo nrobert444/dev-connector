@@ -1,16 +1,21 @@
 import React, { Fragment, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Navbar from './components/layout/Navbar';
-import Landing from './components/layout/Landing';
-import Register from './components/layout/auth/Register';
-import Login from './components/layout/auth/Login';
+import Navbar from './components/layout/Navbar.js';
+import Landing from './components/layout/Landing.js';
+import Register from './components/auth/Register.js';
+import Login from './components/auth/Login.js';
 import Alert from './components/layout/Alert';
-import PrivateRoute from './components/layout/routing/PrivateRoute';
-import CreateProfile from './components/layout/profile-forms/CreateProfile.js';
-import EditProfile from './components/layout/profile-forms/EditProfile.js';
-import AddEducation from './components/layout/profile-forms/AddEducation.js';
-import AddExperience from './components/layout/profile-forms/AddExperience.js';
-import Dashboard from './components/layout/dashboard/Dashboard';
+import PrivateRoute from './components/routing/PrivateRoute.js';
+import CreateProfile from './components/profile-forms/CreateProfile.js';
+import EditProfile from './components/profile-forms/EditProfile.js';
+import AddEducation from './components/profile-forms/AddEducation.js';
+import AddExperience from './components/profile-forms/AddExperience.js';
+import Profiles from './components/profiles/Profiles.js';
+import Profile from './components/profile/Profile.js';
+
+import ProfileItem from './components/profiles/ProfileItem.js';
+
+import Dashboard from './components/dashboard/Dashboard.js';
 
 // Redux
 import { Provider } from 'react-redux';
@@ -41,6 +46,9 @@ const App = () => {
             <Switch>
               <Route exact path='/register' component={Register} />
               <Route exact path='/login' component={Login} />
+              <Route exact path='/profiles' component={Profiles} />
+              <Route exact path='/profile/:id' component={Profile} />
+
               <PrivateRoute exact path='/dashboard' component={Dashboard} />
               <PrivateRoute
                 exact
