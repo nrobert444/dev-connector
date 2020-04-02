@@ -19,7 +19,7 @@ const Profile = ({
   const nullProfile = !profile;
   useEffect(() => {
     getProfileById(match.params.id);
-  }, [getProfileById, match.params.id]);
+  }, [getProfileById, match.params.id, nullProfile]);
 
   return (
     <Fragment>
